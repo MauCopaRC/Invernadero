@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo IoT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Monitoreo IoT en Tiempo Real</h1>
+        <p>Supervisa los datos de temperatura, humedad y humedad del suelo de manera instantánea.</p>
+    </header>
+
+    <main>
+        <section class="sensor-data">
+            <div class="sensor">
+                <h2>Datos de Sensores</h2>
+                <div>Temperatura (ºC): <span id="temperatura" class="sensor-value">N/A</span></div>
+                <div>Humedad (%): <span id="humedad" class="sensor-value">N/A</span></div>
+                <div>Humedad Suelo (%): <span id="humedadSuelo" class="sensor-value">N/A</span></div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <h2>Control de Actuadores</h2>
+            <button id="btnOn" class="btn">Encender</button>
+            <button id="btnOff" class="btn btn-off">Apagar</button>
+            <button id="btnManual" class="btn-man">Manual</button>
+            <button id="btnAuto" class="btn-auto">Automático</button>
+        </section>
+
+        <section class="charts">
+            <div class="chart-row">
+                <div class="chart-container">
+                    <h2>Gráfica de Temperatura</h2>
+                    <canvas id="tempChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Gráfica de Humedad</h2>
+                    <canvas id="humChart"></canvas>
+                </div>
+            </div>
+            <div class="canvas-wrapper">
+                <div class="chart-container">
+                    <h2>Gráfica de Humedad del Suelo</h2>
+                    <canvas id="soilHumChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto IoT - Monitoreo Inteligente de Ambiente</p>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
